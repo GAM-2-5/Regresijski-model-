@@ -21,7 +21,7 @@ df['PCT_change'] = (df['Close'] - df['Open']) / df['Open'] * 100.0
 print(df.tail())
 
 df = df[['Close', 'HL_PCT', 'PCT_change', 'Volume']]
-yforecast_col = 'Close'                                    # ovdje smanjujemo količinu podataka te nepotrebene podatke mičemo tako da su veliki negativan broj te ih onda stroj smatra kao nevažnim.To je važno jer određuje vrijeme  koje je prihvatljivo za ovaj kod.
+forecast_col = 'Close'                                    # ovdje smanjujemo količinu podataka te nepotrebene podatke mičemo tako da su veliki negativan broj te ih onda stroj smatra kao nevažnim.To je važno jer određuje vrijeme  koje je prihvatljivo za ovaj kod.
 df.fillna(value=-99999, inplace=True)                                
 forecast_out = int(math.ceil(0.01 * len(df)))
 df['label'] = df[forecast_col].shift(-forecast_out)
@@ -54,8 +54,8 @@ for i in forecast_set:
     next_unix += 86400
     df.loc[next_date] = [np.nan for _ in range(len(df.columns)-1)]+[i]
 
-df['do sada'].plot()
-df['Budćnost'].plot()
+df['Close'].plot()
+df['Forecast'].plot()
 plt.legend(loc=4)         # ovime smo namjestili graf.
 plt.xlabel('Vrijeme')
 plt.ylabel('Cijena')
