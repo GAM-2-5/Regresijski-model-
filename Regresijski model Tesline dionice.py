@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 style.use('ggplot')  # stil grafa.
 
 
-df = web.DataReader('UNG', 'yahoo')
+df = web.DataReader('TSLA', 'yahoo')
 df = df[['Open',  'High',  'Low',  'Close', 'Volume']]               # Ovim djelom smo definirali promjenu u postotku. Podatke smo uzeli s yahoo financa te smo ih pohranili ya koristiti.
 df['HL_PCT'] = (df['High'] - df['Low']) / df['Close'] * 100.0
 df['PCT_change'] = (df['Close'] - df['Open']) / df['Open'] * 100.0
