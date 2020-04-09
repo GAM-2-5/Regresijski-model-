@@ -1,8 +1,15 @@
 Koristio sam dosta modula pa ću ih samo navesti ovdje sve te objasniti njihove mogućnosti:
 pandas - tablično slaganje podataka(data frame).
-datetime - vremenski periodu, u našem slučaju možemo točno odrediti period od kojega gledamo cijenu dionice.
+datetime - vremenski periodi, u našem slučaju možemo točno odrediti period od kojega gledamo cijenu dionice.
 matplotlib.pyplot- grafovi 
 numpy-modul koji nam je pomogao okom matmeatike i pohranjivanja podataka u obliku arraya
 sklearn-najpoznatiji modul za strojno učenje, on nam je dopustio naparvti model na osnovu učenja. 
 
 Svi ostali moduli su neke uže vrte ovih navedenih.
+Komande za instaliravanje modula:
+
+pip install pandas
+pip install sklearn
+pip install numpy
+pip install DateTime
+pip install  matplotlib
